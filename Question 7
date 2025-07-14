@@ -1,0 +1,71 @@
+abstract class Employee{
+
+abstract int calculateSalary();
+abstract void getDetails();
+
+public static void main(String []args){
+
+Manager manager=new Manager("SANJAI",20,79973,"Manager");
+manager.getDetails();
+System.out.println("Salary : "+(manager.calculateSalary()));
+
+System.out.println();
+Developer developer=new Developer("SATHVIK",21,79975,"Developer");
+developer.getDetails();
+System.out.println("Salary : "+(developer.calculateSalary()));
+}
+}
+class Developer extends Employee{
+String Name;
+int Age;
+int id;
+String Role;
+Developer(String Name,int Age,int id,String Role){
+this.Name=Name;
+this.Age=Age;
+this.id=id;
+this.Role=Role;
+}
+public int calculateSalary(){
+
+        int salary=25000;
+        int bonus = 3000;
+        int pf=5000;
+        return salary+bonus+pf;
+}
+
+public void getDetails(){
+ System.out.println("Developer Details");
+ System.out.println("Name : " + this.Name);
+ System.out.println("Age : "+this.Age);
+ System.out.println("Id : "+this.id);
+ System.out.println("Role : "+this.Role);
+}
+}
+class Manager extends Employee{
+String Name;
+int Age;
+int id;
+String Role;
+Manager(String Name,int Age,int id,String Role){
+this.Name=Name;
+this.Age=Age;
+this.id=id;
+this.Role=Role;
+}
+public int calculateSalary(){
+ 
+	int salary=20000;
+	int bonus = 2000;
+	int pf=5000;
+	return salary+bonus+pf;
+}
+
+public void getDetails(){
+ System.out.println("Manager Details");
+ System.out.println("Name : " + this.Name);
+ System.out.println("Age : "+this.Age);
+ System.out.println("Id : "+this.id);
+ System.out.println("Role : "+this.Role);
+}
+}
