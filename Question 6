@@ -1,0 +1,43 @@
+import java.util.*;
+class Shape{
+
+public void area(){
+System.out.println("This method is used to calculate Area of different shapes ");
+}
+public static void main(String []args){
+Shape shape=new Shape();
+Circle circle=new Circle();
+Rectangle rectangle=new Rectangle();
+Shape []arr=new Shape[]{shape,circle,rectangle};
+for(Shape temp:arr){
+temp.area();
+}
+
+
+}
+
+}
+
+class Circle extends Shape{
+
+
+public void area(){
+int radius=5;
+System.out.println("Area of Circle "+ radius*radius);
+
+}
+
+}
+
+
+class Rectangle extends Shape{
+
+public void area(){
+int l=5;
+int b=4;
+System.out.println("Area of Rectangle "+ l*b);
+}
+
+
+}	
+
