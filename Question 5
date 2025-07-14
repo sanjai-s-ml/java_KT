@@ -1,0 +1,83 @@
+import java.util.*;
+class Account{
+
+private int accountNumber;
+private float balance;
+private String ownerName;
+static List<Integer> list=new ArrayList<>();
+
+int flag=0;
+int temp=0;
+Account(){
+while(flag == 0){
+temp=(int)(10000000+Math.random()*90000000);
+if (!list.contains(temp)){
+this.accountNumber=temp;
+list.add(temp);
+flag=1;
+}
+
+}
+}
+public void getAccountNumber(){
+    System.out.println("Account Number : "+this.accountNumber);
+}
+
+//public void setAccountNumber(){
+//while(flag == 0){
+//temp=(int)(10000000+Math.random()*90000000);
+//if (!list.contains(temp)){
+//this.accountNumber=temp;
+//list.add(temp);
+//flag=1;
+//}
+
+//}
+//}
+
+
+public void getBalance(){
+    System.out.println("Available Balance : "+this.balance);
+}
+
+public void setBalance(int val){
+    if(val>0){
+
+	this.balance=val;
+    }
+    else {
+	    System.out.println("Invalid balance ");
+    }
+}
+
+public void withDraw(int amount){
+if(amount <=balance ){
+ balance-=amount;
+ System.out.println("Withdraw Successful ");
+ System.out.println("Balance available : "+this.balance);
+}
+else{
+ System.out.println("Invalid ammount");
+}
+
+}
+public void getOwnerName(){
+    System.out.println("Account Holder Name : "+this.ownerName);
+}
+
+public void setOwnerName(String val){
+    this.ownerName=val;
+}
+
+public static void main(String []args){
+
+Account account=new Account();
+account.setBalance(10000);
+account.setOwnerName("sanjai");
+account.getAccountNumber();
+account.getOwnerName();
+account.getBalance();
+account.withDraw(1000);
+account.getBalance();
+}
+}
