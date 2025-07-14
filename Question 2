@@ -1,0 +1,53 @@
+public enum EnumSample{
+
+MONDAY("monday","It's Weekday "),
+TUESDAY("tuesday","It's Weekday "),
+WEDNESDAY("wednesday","It's Weekday "),
+THURSDAY("thrusday","It's Weekday"),
+FRIDAY("friday" ,"It's Weekday "),
+SATURDAY("saturday","It's WeekEnd "),
+SUNDAY("sunday","It's WeekEnd ");
+
+private String day;
+private String comment;
+
+EnumSample(String value, String str){
+
+this.day=value;
+this.comment=str;
+
+}
+
+public String getDay(){
+   return this.day;
+
+}
+
+public String getComment(){
+
+ return this.comment;
+}
+
+public static EnumSample toPrintWeekend(String str){
+
+for(EnumSample sample:EnumSample.values()){
+if(sample.day.equals(str.toLowerCase()))
+       	return sample;
+
+}
+return null;
+
+}
+
+public static void main(String []args){
+
+String []arr=new String[]{"Monday","Sunday","FRIDAY"};
+for(String str:arr){
+
+EnumSample s=EnumSample.toPrintWeekend(str);
+System.out.println(str + " " + s.getComment());
+}
+
+}
+
+}
