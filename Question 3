@@ -1,0 +1,31 @@
+class Vehicle{
+
+public void startEngine(){
+System.out.println("Engine Started From Base Class");
+
+}
+public static void main(String [] args){
+
+Car car=new Car();
+Vehicle v=new Vehicle();
+car.startEngine();
+car.playMusic();
+
+v.startEngine();
+}
+
+
+}
+class Car extends Vehicle{
+
+public void startEngine(){
+super.startEngine();
+System.out.println("Ignition ON From Child Class");
+}
+
+public void playMusic(){
+System.out.println("Music started playing");
+}
+
+
+}
