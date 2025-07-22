@@ -1,0 +1,4 @@
+Class.forName("org.sqlite.JDBC");//make this class available for driver
+        Connection con=DriverManager.getConnection("jdbc:sqlite://home//Sanjai//Documents//univ.db");//connection to db
+        Statement stm=con.createStatement();
+        ResultSet rs=stm.executeQuery("select * from dept");
