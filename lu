@@ -1,0 +1,8 @@
+public static void listUsers() {
+    try (Session session = HibernateUtil.getSessionFactory().openSession()) {
+        List<User> users = session.createQuery("FROM User", User.class).getResultList();
+        users.forEach(System.out::println);
+    } catch (Exception e) {
+        e.printStackTrace();
+    }
+}
